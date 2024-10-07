@@ -23,11 +23,9 @@ const apartment = {
     floor: 3,
   }
 
-const adress = {
-    city: "London",
-    part: "Westminster",
-}
-
+//separátní proměnná
+const city = apartment.city
+const district = apartment.district 
 
 document.body.innerHTML = "<p>Dispozice bytu je: " + apartment.disposition + "</p>"
 
@@ -35,10 +33,14 @@ document.body.innerHTML += "<p>Čistý nájem činí: " + apartment.price.rent +
 
 document.body.innerHTML += "<p>Měsíční nájem vč. poplatků činí: " + Number(apartment.price.rent + apartment.price.fees.water + apartment.price.fees.energy + apartment.price.fees.services) + " Kč za měsíc. </p>"
 
-document.body.innerHTML += "<p>Výměra bytu je: " + apartment.area.floorage + " " + String(apartment.area.units) + " vč. " + apartment.area.balcony + "</p>"
+document.body.innerHTML += "<p>Výměra bytu je: " + apartment.area.floorage + " " + String(apartment.area.units) + " vč. balkónu " + apartment.area.balcony + apartment.area.units + "</p>"
 
-document.body.innerHTML += "<p>Byt se nachází ve městě " + adress.city + ", " + adress.part + "</p>"
+document.body.innerHTML += "<p>Byt se nachází ve městě " + city + ", " + district + "</p>"
+
+
+
+document.body.innerHTML += "<p>Stav inzerátu: " + apartment.status + "</p>"
 
 apartment.status = 'taken'
 
-document.body.innerHTML += "<p>Byt je ve stavu: " + apartment.status + "</p>"
+document.body.innerHTML += "<p>Stav inzerátu: " + apartment.status + "</p>"
